@@ -23,15 +23,15 @@ useEffect(()=>{
     }
 
     return (
-        <div className="  navbar bg--400  fixed shadow-lg">
+        <div className="  navbar bg--400  fixed shadow-lg px-4">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl text-xl gap-0">Byte <span className='text-gray-500'>Blaze</span></a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
-            <NavLink to='/' className='font-bold'><a>Home</a></NavLink>
-            <NavLink to='/blogs' className='font-bold'><a>Blogs</a></NavLink>
-            <NavLink to='/bookmarks' className='font-bold'><a>Bookmarks</a></NavLink>
+            <NavLink to='/' className='font-bold px-3'><a>Home</a></NavLink>
+            <NavLink to='/blogs' className='font-bold px-3'><a>Blogs</a></NavLink>
+            <NavLink to='/bookmarks' className='font-bold px-3'><a>Bookmarks</a></NavLink>
              
           
           </ul>  

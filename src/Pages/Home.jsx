@@ -2,15 +2,17 @@ import React from 'react';
 import Navbar from '../Components/Navbar';
 import Blogs from './Blogs';
 import BookMarks from './BookMarks';
+import Hero from '../Components/Hero';
+import wave from '../../public/asset/wave.svg'
 
 const Home = () => {
     return (
-        <div>
-               <div className='h-16'>
-                
-               </div>
+        <div className='flex flex-col justify-center min-h-[calc(100vh-116px)] relative'>
+               <Hero/>
 
-              <h2>hone</h2>
+               <div className=' bg-red-400'>
+                <img src={wave}  className='absolute w-full bottom-0'/>
+               </div>
              
         </div>
     );

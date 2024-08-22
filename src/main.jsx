@@ -7,6 +7,9 @@ import Home from './Pages/Home.jsx'
 import Blogs from './Pages/Blogs.jsx'
 import BookMarks from './Pages/BookMarks.jsx'
 import MainlayOut from './layOut/MainlayOut.jsx'
+import Blog from './Pages/Blog.jsx'
+import Contact from './Components/Contact.jsx'
+import Author from './Components/Author.jsx'
 
 
 const router=createBrowserRouter([
@@ -20,8 +23,26 @@ const router=createBrowserRouter([
           },
           {
             path:'/blogs',
-            element:<Blogs/>
+            element:<Blogs/>,
+            loader:()=>fetch('https://dev.to/api/articles?per_page=20&top=7')
           },
+          {
+             path:'/blog/:id',
+             element:<Blog/>,
+             loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`),
+             children:[
+                   {
+                    index:true,
+                    element:<Contact/>,
+                    loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`),
+                   },
+                   {
+                    path:'author',
+                    element:<Author/>,
+                    loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`),
+                   }
+                 ]
+            },
           {
             path:'/bookmarks',
             element:<BookMarks/>
